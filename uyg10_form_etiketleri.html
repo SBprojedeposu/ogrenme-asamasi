@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Formlar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <form>  <!--eğer form etiketlerinden giriş etiketinin içine "action" yazıp bu bilgilerin nereye iletileceğini belirleriz.
+         yani şöyle olacaktı: <form action="">...</form> şeklinde giriş etiketinin içindeki tırnağa iletilecek yerin yolunu gösteririz.
+         (bu kısım bir tık back-end kısmıyla alakalıdır.)-->
+
+        <p>
+           Ad <input type="text" required> <!--burda yazan required attribute'ü sayesinde kullanıcı bu alanı doldurmak zorunda kalıyor. 
+           Eğer doldurmadan "kaydet" butonuna basarsa sistem onu doldurması için uyaracak.Bu şekilde istediğin yerdeki bilgiyi zorunlu tutabilirsin-->
+        </p>
+
+        <p>
+            Soyad <input type="text">
+        </p>
+
+        <p>
+            Beni Hatırla <input type="checkbox">
+        </p>
+
+        <p>
+            Erkek <input type="radio">   
+            Kadın <input type="radio">   
+        </p>
+
+                <!--Şuan üstteki şekilde her iki cinsiyet butonu da aynı anda seçilebilir durumda. Bunu önlemek için
+                bir "name" atayıp gruplama yapmamız gerecek.Aynı grup ismine sahip olanlarda aynı anda seçimi 
+                önmeliş oluruz.Yani ikisinden birini seçtirtmek için grup ismi aynı olmalıdır. Mesela aşağıda
+                "name=cinsiyet" şeklinde yazıp ikisini de aynı gruba aldık. Böylece seçim hakkını teke düşürdük.-->
+        <br><br>
+
+        <p>
+            Erkek <input type="radio" name="cinsiyet">
+            Kadın <input type="radio" name="cinsiyet">
+        </p>
+
+        <br><br>
+        
+        <p>
+          Hobiler <br>
+
+             Sinema <input type="checkbox" name="grup1">   <!--Farklı gruplandırmalar yaptığımız için şuan hobileri seçerken birden çok hobi seçme hakkı sunmuş olduk.-->
+             Futbol <input type="checkbox" name="grup2">
+             Yüzme <input type="checkbox" name="grup3">
+        </p>
+
+        <br>
+
+        <p> İlçe seçiniz
+            <select>
+                <option>Güngören</option>
+                <option>Bağcılar</option>
+                <option>Zeytinburnu</option>
+            </select>
+        </p>
+
+        <br>
+
+        <p> İlçe seçiniz
+            <select multiple>                   <!--bu şekilde multiple yazınca ctrl'ye basılı tutup çoklu seçim yapabiliyorsun.-->
+                <option>Güngören</option>
+                <option>Bağcılar</option>
+                <option>Zeytinburnu</option>
+            </select>
+        </p>
+
+        <br>
+
+        <input type="submit" value="Kaydet">   <!--bu buton sayesinde kullanıcının gireceği bilgiler form giriş etiketindeki adrese gönderilir.-->
+
+            <!--Form giriş etiketinin içindeki adrese gönderilen bilgilerin doğru şekilde sınıflandırılıp iletilmesi için yani neyin ne olduğunu 
+            anlamamız için input etiketlerinin içine name="" şeklinde ifade koyup bu tırnağın içine kullanıcının hangi bilgisi alındıysa onun adı 
+            yazılır mesela ordaki inputla kullanıcının e postası iletilecekse name="e posta" şeklinde yazılır ki bu bilgi iletilince back-end kısmında
+            ne bilgisi olduğu anlaşılsın.-->
+
+        <br><br>
+
+            
+
+    </form>
+
+
+</body>
+</html>
